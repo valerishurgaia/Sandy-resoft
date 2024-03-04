@@ -38,7 +38,7 @@ import {
 // Material Dashboard 2 PRO React context
 import { useMaterialUIController } from "context";
 
-function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...rest }) {
+function SidenavCollapse({ icon, name, children, active, noCollapse, open, noArrow, ...rest }) {
   const [controller] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } = controller;
 
@@ -72,7 +72,7 @@ function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...re
               })
             }
           />
-
+        {!noArrow && (
           <Icon
             sx={(theme) =>
               collapseArrow(theme, {
@@ -88,7 +88,7 @@ function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...re
           >
             expand_less
           </Icon>
-        </MDBox>
+           )} </MDBox>
       </ListItem>
       {children && (
         <Collapse in={open} unmountOnExit>
@@ -115,6 +115,7 @@ SidenavCollapse.propTypes = {
   active: PropTypes.bool,
   noCollapse: PropTypes.bool,
   open: PropTypes.bool,
+  noArrow: PropTypes.bool,
 };
 
 export default SidenavCollapse;

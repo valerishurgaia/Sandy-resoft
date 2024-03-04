@@ -155,7 +155,7 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Material Dashboard PRO"
+              brandName="Re:Soft"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -167,7 +167,7 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
+          <Route path="*" element={<Navigate to="/dashboards/new-campaign" />} />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -179,7 +179,7 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Material Dashboard PRO"
+            brandName="Re:Soft"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
@@ -191,7 +191,7 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
+        <Route path="*" element={<Navigate to="/dashboards/new-campaign" />} />
       </Routes>
     </ThemeProvider>
   );

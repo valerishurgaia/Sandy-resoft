@@ -45,7 +45,7 @@ const pageRoutes = [
         collapse: [
           {
             name: "analytics",
-            route: "/dashboards/analytics",
+            route: "/dashboards/new-campaign",
           },
           {
             name: "sales",

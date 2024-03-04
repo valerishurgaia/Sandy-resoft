@@ -9,7 +9,7 @@ import MDTypography from "components/MDTypography";
 import SalesTable from "examples/Tables/SalesTable";
 
 // Data
-import salesTableData from "layouts/dashboards/analytics/components/SalesByCountry/data/salesTableData";
+import salesTableData from "layouts/dashboards/campaigns/components/SalesByCountry/data/salesTableData";
 
 import pen from "assets/images/icons/pen-line.png";
 import button from "assets/images/button/button.png"
