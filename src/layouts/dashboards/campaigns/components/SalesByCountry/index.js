@@ -1,18 +1,14 @@
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
-// Material Dashboard 2 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 PRO React examples
 import SalesTable from "examples/Tables/SalesTable";
 
-// Data
 import salesTableData from "layouts/dashboards/campaigns/components/SalesByCountry/data/salesTableData";
 
-import pen from "assets/images/icons/pen-line.png";
-import button from "assets/images/button/button.png"
+// import pen from "assets/images/icons/pen-line.png";
+// import button from "assets/images/button/button.png"
 import plus from "assets/images/icons/plus-circle.png";
 import arrow from "assets/images/icons/angle-down-small.png";
 import { useState } from "react";
@@ -21,18 +17,30 @@ import linkImg from "assets/images/icons/link-alt.png";
 import edit from "assets/images/icons/edit.png";
 import noteText from "assets/images/icons/note-text.png"
 
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
+
  function SalesByCountry() {
    const [showContent, setShowContent] = useState(false);
   return (
-
     <>
-      <MDBox>
-        <h3>
-          ActRight <img src={pen} alt="Pen" style={{ cursor: "pointer" }} />
-        </h3>
+    <DashboardLayout>
+    <DashboardNavbar />
 
+    <MDBox display="flex" pt={2} >
+        <MDTypography variant="h4" pl={3}>
+          ActRight
+        </MDTypography>
+        <Tooltip title="Edit" placement="bottom">
+          <MDTypography variant="body1" sx={{ cursor: "pointer", mx: 1 }}>
+            <Icon color="inherit">edit</Icon>
+          </MDTypography>
+        </Tooltip>
+        </MDBox>
 
-        {/*<img src={button} style={{width:"250px", height:"50px", cursor:"pointer", marginTop:"22px", marginBottom:"20px"  }} />*/}
+        <MDBox>
 
         <button style={{
           border: "1px solid white",
@@ -102,6 +110,8 @@ import noteText from "assets/images/icons/note-text.png"
         <div style={{cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >{">"}</div>
       </div>
     </MDBox>
+    </DashboardLayout>
+    
     </>
   );
 }
