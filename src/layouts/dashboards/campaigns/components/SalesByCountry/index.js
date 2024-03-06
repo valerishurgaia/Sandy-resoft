@@ -7,15 +7,14 @@ import SalesTable from "examples/Tables/SalesTable";
 
 import salesTableData from "layouts/dashboards/campaigns/components/SalesByCountry/data/salesTableData";
 
-// import pen from "assets/images/icons/pen-line.png";
-// import button from "assets/images/button/button.png"
-import plus from "assets/images/icons/plus-circle.png";
+
+import plus from "assets/images/icons/plus-circle.svg";
 import arrow from "assets/images/icons/angle-down-small.png";
 import { useState } from "react";
 
-import linkImg from "assets/images/icons/link-alt.png";
-import edit from "assets/images/icons/edit.png";
-import noteText from "assets/images/icons/note-text.png"
+import linkImg from "assets/images/icons/link-alt.svg";
+import edit from "assets/images/icons/edit.svg"; 
+import noteText from "assets/images/icons/note-text.svg";
 
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -51,7 +50,7 @@ import Tooltip from "@mui/material/Tooltip";
           backgroundColor: "white",
           textAlign:"center",
           marginTop:"22px",
-          marginBottom:"20px",
+          marginBottom:"10px",
           cursor:"pointer",
           display:"flex",
           alignItems : "center",
@@ -67,18 +66,18 @@ import Tooltip from "@mui/material/Tooltip";
         </button>
 
         {showContent && (
-          <div style={{width:"270px", backgroundColor:"white", borderRadius:"20px", marginTop:"0px", marginBottom:"10px", }} >
-            <div>
-            <img style={{display:"flex", flexDirection:"column"}} src={edit} />
-            <p style={{ fontSize: "14px", margin: "12px" }}>Create new campaign</p>
+          <div style={{width:"270px", alignContent:"center", backgroundColor:"white", borderRadius:"20px", marginBottom:"10px",  }} >
+            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
+            <img style={{marginTop:"10px"}} src={edit} />
+            <p style={{ fontSize: "14px", marginTop:"10px"}}>Create new campaign</p>
             </div>
-            <div>
-            <img src={noteText}/>
-            <p style={{ fontSize: "14px", margin: "12px" }}>Import HTML file</p>
+            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
+            <img style={{marginTop:"10px"}} src={noteText}/>
+            <p style={{ fontSize: "14px",marginTop:"10px" }}>Import HTML file</p>
             </div>
-            <div>
-            <img src={linkImg} />
-            <p style={{ fontSize: "14px", margin: "12px" }}>import from URL</p>
+            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
+            <img style={{marginTop:"10px", marginBottom:"10px"}} src={linkImg} />
+            <p style={{ fontSize: "14px",marginTop:"10px", marginBottom:"10px"  }}>import from URL</p>
             </div>
           </div>
         )}
