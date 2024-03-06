@@ -126,7 +126,7 @@ const routes = [
   } ,
   {
     type: "collapse",
-    name: "Subscribe",
+    name: "Subscribers-list",
     key: "new-campaign",
     noArrow : true,
     route: "/dashboards/subscribers-list",
