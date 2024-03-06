@@ -2,15 +2,15 @@ import sent from "assets/images/status/sent.png";
 import draft from "assets/images/status/draft.png";
 import trash from "assets/images/icons/dl.png";
 import copy from "assets/images/icons/dd.png";
-import uniqueClicks from "assets/images/icons/click.png";
-import uniqueOpens from "assets/images/icons/unique.png";
+import uniqueClicks from "assets/images/icons/clicks.svg";
+import uniqueOpens from "assets/images/icons/opens.svg"; 
 
 
 const salesTableData = [
   {
     status: "campaign",
     paragraph: "",
-    recipients: "recipients",
+    recipients: "recipients", 
     sent: "sent",
     uniqueOpen: "Unique Opens",
     uniqueClicks: "Unique Clicks ",

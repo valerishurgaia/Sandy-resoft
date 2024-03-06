@@ -9,7 +9,7 @@ import salesTableData from "layouts/dashboards/campaigns/components/SalesByCount
 
 
 import plus from "assets/images/icons/plus-circle.svg";
-import arrow from "assets/images/icons/angle-down-small.png";
+import arrow from "assets/images/icons/angle-down-small.svg";
 import { useState } from "react";
 
 import linkImg from "assets/images/icons/link-alt.svg";
@@ -21,67 +21,112 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
- function SalesByCountry() {
-   const [showContent, setShowContent] = useState(false);
+function SalesByCountry() {
+  const [showContent, setShowContent] = useState(false);
+  const [arrowRotation, setArrowRotation] = useState(0);
+
+  const toggleContent = () => {
+    setShowContent(!showContent);
+    setArrowRotation(arrowRotation + 180);
+  };
+
   return (
     <>
-    <DashboardLayout>
-    <DashboardNavbar />
+      <DashboardLayout>
+        <DashboardNavbar />
 
-    <MDBox display="flex" pt={2} >
-        <MDTypography variant="h4" pl={3}>
-          ActRight
-        </MDTypography>
-        <Tooltip title="Edit" placement="bottom">
-          <MDTypography variant="body1" sx={{ cursor: "pointer", mx: 1 }}>
-            <Icon color="inherit">edit</Icon>
+        <MDBox display="flex" pt={2}>
+          <MDTypography variant="h4" pl={3}>
+            ActRight
           </MDTypography>
-        </Tooltip>
+          <Tooltip title="Edit" placement="bottom">
+            <MDTypography variant="body1" sx={{ cursor: "pointer", mx: 1 }}>
+              <Icon color="inherit">edit</Icon>
+            </MDTypography>
+          </Tooltip>
         </MDBox>
 
         <MDBox>
+          <button
+            style={{
+              border: "1px solid white",
+              borderRadius: "12px",
+              width: "270px",
+              height: "40px",
+              color: "#364868",
+              backgroundColor: "white",
+              textAlign: "center",
+              marginTop: "22px",
+              marginBottom: "10px",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+            }}
+            onClick={toggleContent}
+          >
+            <img
+              style={{
+                cursor: "pointer",
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: "9px",
+              }}
+              src={plus}
+              alt="Plus"
+            />
+            <h4 style={{ flexDirection: "row", textAlign: "center", marginLeft: "7px" }}>
+              Create & Send New Campaign
+            </h4>
+            <img
+              style={{
+                cursor: "pointer",
+                textAlign: "center",
+                marginLeft: "7px",
+                transition: "transform 0.5s ease",
+                transform: `rotate(${arrowRotation}deg)`,
+              }}
+              src={arrow}
+              alt="Arrow"
+            />
+          </button>
 
-        <button style={{
-          border: "1px solid white",
-          borderRadius: "12px",
-          width: "270px",
-          height: "40px",
-          color: "#364868",
-          backgroundColor: "white",
-          textAlign:"center",
-          marginTop:"22px",
-          marginBottom:"10px",
-          cursor:"pointer",
-          display:"flex",
-          alignItems : "center",
-        }}
-        onClick={() => setShowContent(!showContent)}
-        >
-          <img style={{cursor:"pointer", alignItems:"center", justifyContent:"center",marginLeft:"9px"
-          }} src={plus} alt="Plus" />
-          <h4 style={{flexDirection:"row", textAlign:"center",marginLeft:"7px"
-          }} > Create & Send New Campaign</h4>
-          <img style={{cursor:"pointer", textAlign:"center",marginLeft:"4px"
-          }} src={arrow} alt="Arrow" />
-        </button>
-
-        {showContent && (
-          <div style={{width:"270px", alignContent:"center", backgroundColor:"white", borderRadius:"20px", marginBottom:"10px",  }} >
-            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
-            <img style={{marginTop:"10px"}} src={edit} />
-            <p style={{ fontSize: "14px", marginTop:"10px"}}>Create new campaign</p>
+          {showContent && (
+            <div
+              style={{
+                width: "270px",
+                alignContent: "center",
+                backgroundColor: "white",
+                borderRadius: "20px",
+                marginBottom: "10px",
+                maxHeight: showContent ? "300px" : "0px",
+                overflow: "hidden",
+                transition: "max-height 0.5s ease",
+                zIndex: 7,
+                position:"absolute",
+              }}
+            >
+              <div style={{ 
+                display: "flex", marginLeft: "10px", cursor: "pointer" }}>
+                <img style={{ marginTop: "10px" }} src={edit} alt="Edit" />
+                <p style={{ fontSize: "14px", marginTop: "10px", marginLeft: "10px" }}>
+                  Create new campaign
+                </p>
+              </div>
+              <div style={{ display: "flex", marginLeft: "10px", cursor: "pointer" }}>
+                <img style={{ marginTop: "10px" }} src={noteText} alt="Note" />
+                <p style={{ fontSize: "14px", marginTop: "10px", marginLeft: "10px" }}>
+                  Import HTML file
+                </p>
+              </div>
+              <div style={{ display: "flex", marginLeft: "10px", cursor: "pointer" }}>
+                <img style={{ marginTop: "10px", marginBottom: "10px" }} src={linkImg} alt="Link" />
+                <p style={{ fontSize: "14px", marginTop: "10px", marginBottom: "10px", marginLeft: "10px" }}>
+                  Import from URL
+                </p>
+              </div>
             </div>
-            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
-            <img style={{marginTop:"10px"}} src={noteText}/>
-            <p style={{ fontSize: "14px",marginTop:"10px" }}>Import HTML file</p>
-            </div>
-            <div style={{display:"flex", marginLeft: "10px", cursor:"pointer"}}>
-            <img style={{marginTop:"10px", marginBottom:"10px"}} src={linkImg} />
-            <p style={{ fontSize: "14px",marginTop:"10px", marginBottom:"10px"  }}>import from URL</p>
-            </div>
-          </div>
-        )}
-      </MDBox>
+          )}
+        </MDBox>
 
       <Card sx={{ width: "100%" }}>
 

@@ -56,7 +56,7 @@ import {
 } from "context";
 
 
-import angleDown from "../../../assets/images/icons/angle-down.png";
+import angleDown from "../../../assets/images/icons/angle-down.svg";
 import actRghtPhoto from "../../../assets/images/icons/Ellipse 37.svg"
 
 
