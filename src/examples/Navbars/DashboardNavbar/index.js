@@ -163,8 +163,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 color: "white",
                 backgroundColor: "#364868",
                 textAlign: "center",
-                marginTop: "22px",
-                marginBottom: "20px",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
