@@ -1,9 +1,9 @@
-import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
+// import Card from "@mui/material/Card";
+// import Grid from "@mui/material/Grid";
 
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import SalesTable from "examples/Tables/SalesTable";
+// import SalesTable from "examples/Tables/SalesTable";
 
 import salesTableData from "layouts/dashboards/campaigns/components/SalesByCountry/data/salesTableData";
 
@@ -12,9 +12,9 @@ import plus from "assets/images/icons/plus-circle.svg";
 import arrow from "assets/images/icons/angle-down-small.svg";
 import { useState } from "react";
 
-import linkImg from "assets/images/icons/link-alt.svg";
-import edit from "assets/images/icons/edit.svg"; 
-import noteText from "assets/images/icons/note-text.svg";
+// import linkImg from "assets/images/icons/link-alt.svg";
+// import edit from "assets/images/icons/edit.svg"; 
+// import noteText from "assets/images/icons/note-text.svg";
 
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
@@ -128,24 +128,109 @@ function SalesByCountry() {
           )}
         </MDBox>
 
-      <Card sx={{ width: "100%" }}>
 
 
-        {/*<MDBox display="flex">*/}
-        {/*  <MDTypography variant="h6" sx={{ mt: 2, mb: 1, ml: 2 }}>*/}
-        {/*    campaign*/}
-        {/*  </MDTypography>*/}
-        {/*</MDBox>*/}
+        <MDBox>  
+<table style={{ backgroundColor: 'white', borderRadius: '20px', borderCollapse: 'collapse', width: '100%'  }}>
+  <thead  >
+    <tr  style={{ borderBottom: '1px solid #F0F2F5', fontSize:"18px" }}>
+      <th>Campaign</th>
+      <th align="left"></th>
+      <th align="right">Recipients</th>
+      <th align="right">Sent</th>
+      <th align="right">Unique Opens</th>
+      <th align="right">Unique Clicks</th>
+      <th align="right">Duplicate</th>
+      <th align="right">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {salesTableData.map((salesTableData) => (
+      <tr key={salesTableData.ID} style={{ borderBottom: '1px solid #F0F2F5' }} >
+        <td scope="row">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '2px 4px',
+              borderRadius: '10px',
+              margin: '20px',
+              fontSize:"18px",
+              backgroundColor: salesTableData.status === "sent" ? '#4CAF50' : 'transparent',
+              color: salesTableData.status === "sent" ? 'white' : '#CBCBCB',
+              border: salesTableData.status === "sent" ? "none" : "1px solid #CBCBCB",
+              width: "50px",
+              textAlign:"center"
+            }}
+          >
+            {salesTableData.status}
+          </div>
+        </td>
+        <td align="left" style={{ fontSize:"14px"}} >{salesTableData.paragraph}</td>
+        <td align="center">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px',
+              fontSize:"14px"
+            }}
+          >
+            {salesTableData.recipients}
+          </div>
+        </td>
+        <td align="center">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px', 
+              fontSize:"14px"
+            }}
+          >
+            {salesTableData.sent}
+          </div>
+        </td>
+        <td align="center">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px"
+            }}
+          >
+            {salesTableData.uniqueOpen}
+          </div>
+        </td>
+        <td align="center">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px"
+            }}
+          >
+            {salesTableData.uniqueClicks}
+          </div>
+        </td>
+        <td align="center">
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px"
+            }}
+          >
+            {salesTableData.dublicate}
+          </div>
+        </td>
+        <td align="right">{salesTableData.delete}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+    </MDBox>
 
-
-
-        <MDBox p={2} display={"flex"} flexDirection={"column"}>
-          <Grid container>
-          <SalesTable rows={salesTableData} shadow={false} />
-        </Grid>
-      </MDBox>
-
-    </Card>
 
     <MDBox>
       <div style={{ display: "flex", flexDirection: "row", marginTop:"30px", marginBottom:"100px"}}>
