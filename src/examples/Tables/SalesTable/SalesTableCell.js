@@ -26,7 +26,7 @@ import MDBox from "components/MDBox";
 function SalesTableCell({ title, content, image, noBorder, ...rest }) {
   let template;
 
-  if (image) {
+  if (image) { 
     template = (
       <TableCell {...rest} align="left" sx={{ border: noBorder && 0 }}>
         <MDBox display="flex" alignItems="center" width="max-content" cursor="pointer">
