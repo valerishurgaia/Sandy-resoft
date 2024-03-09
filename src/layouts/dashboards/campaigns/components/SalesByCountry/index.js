@@ -12,9 +12,9 @@ import plus from "assets/images/icons/plus-circle.svg";
 import arrow from "assets/images/icons/angle-down-small.svg";
 import { useState } from "react";
 
-// import linkImg from "assets/images/icons/link-alt.svg";
-// import edit from "assets/images/icons/edit.svg"; 
-// import noteText from "assets/images/icons/note-text.svg";
+ import linkImg from "assets/images/icons/link-alt.svg";
+ import edit from "assets/images/icons/edit.svg"; 
+ import noteText from "assets/images/icons/note-text.svg";
 
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
