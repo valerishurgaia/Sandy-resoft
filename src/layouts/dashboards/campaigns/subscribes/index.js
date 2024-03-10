@@ -160,9 +160,13 @@ function SubscriberLists() {
             {row.Bounced}
           </div>
         </td>
-        <td align="right">{row.Hide}</td>
+        <td align="right"> {row.Hide}</td>
         <td align="right">{row.Edit}</td>
-        <td align="right">{row.Delete}</td>
+        <td align="center">
+  <div style={{ marginRight: "20px" }}>
+    {row.Delete}
+  </div>
+  </td>
       </tr>
     ))}
   </tbody>
