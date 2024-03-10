@@ -131,9 +131,9 @@ function SalesByCountry() {
 
 
         <MDBox>  
-<table style={{ backgroundColor: 'white', borderRadius: '20px', borderCollapse: 'collapse', width: '100%'  }}>
+<table style={{ backgroundColor: 'white', borderRadius: '20px', borderCollapse: 'collapse', width: '100%'}}>
   <thead  >
-    <tr  style={{ borderBottom: '1px solid #F0F2F5', fontSize:"18px" }}>
+    <tr  style={{ borderBottom: '1px solid #F0F2F5', fontSize:"18px", margin:"20px"}}>
       <th>Campaign</th>
       <th align="left"></th>
       <th align="right">Recipients</th>
@@ -191,13 +191,27 @@ function SalesByCountry() {
         <td align="center">
           <div
             style={{
-              display: 'inline-block',
+              display: 'flex',
               padding: '4px',
               borderRadius: '10px',
-              fontSize:"14px"
+              fontSize:"14px",
+              flexDirection:"column"
             }}
           >
-            {salesTableData.uniqueOpen}
+             <span style={{ backgroundColor:'#4CAF50', color:"white", width:"35%", borderRadius:"5px"}}>{salesTableData.uniqueOpen[0]}</span>  {salesTableData.uniqueOpen[1]}
+          </div>
+        </td>
+        <td align="center">
+          <div
+            style={{
+              display: 'flex',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px",
+              flexDirection:"column"
+            }}
+          >
+             <span style={{ backgroundColor:'#364868', color:"white", width:"35%", borderRadius:"5px"}}>{salesTableData.uniqueClicks[0]}</span> {salesTableData.uniqueClicks[1]}
           </div>
         </td>
         <td align="center">
@@ -206,25 +220,18 @@ function SalesByCountry() {
               display: 'inline-block',
               padding: '4px',
               borderRadius: '10px',
-              fontSize:"14px"
-            }}
-          >
-            {salesTableData.uniqueClicks}
-          </div>
-        </td>
-        <td align="center">
-          <div
-            style={{
-              display: 'inline-block',
-              padding: '4px',
-              borderRadius: '10px',
-              fontSize:"14px"
+              fontSize:"14px",
+             
             }}
           >
             {salesTableData.dublicate}
           </div>
         </td>
-        <td align="right">{salesTableData.delete}</td>
+        <td align="center">
+  <div style={{ marginRight: "20px" }}>
+    {salesTableData.delete}
+  </div>
+</td>
       </tr>
     ))}
   </tbody>
