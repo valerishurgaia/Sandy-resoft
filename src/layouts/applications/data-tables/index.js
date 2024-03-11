@@ -29,6 +29,8 @@ import Icon from "@mui/material/Icon";
 import MDButton from "components/MDButton";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CustomTable from "layouts/applications/data-tables/all-template-table";
+import TableButton from "layouts/applications/data-tables/pagination";
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function DataTables() {
   return (
@@ -67,6 +69,8 @@ function DataTables() {
               <CustomTable />
               </Card>
         </MDBox>
+        <TableButton text={1} />
+        <TableButton icon={faChevronRight} />
       </MDBox>
       <Footer />
     </DashboardLayout>
