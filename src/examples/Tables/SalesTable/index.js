@@ -56,7 +56,7 @@ function SalesTable({ title, rows, shadow }) {
             />
           )
     );
-
+ 
     return <TableRow key={rowKey}>{tableRows}</TableRow>;
   });
 

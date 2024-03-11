@@ -56,13 +56,10 @@ import {
 } from "context";
 
 
-import button from "../../../assets/images/button/button2.png"
-import plus from "../../../assets/images/icons/plus-circle.png";
-import arrow from "../../../assets/images/icons/angle-down-small.png";
+import angleDown from "../../../assets/images/icons/angle-down.svg";
+import actRghtPhoto from "../../../assets/images/icons/Ellipse 37.svg"
 
 
-import angleDown from "../../../assets/images/icons/angle-down.png";
-import actRghtPhoto from "../../../assets/images/icons/Ellipse 37.png"
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();

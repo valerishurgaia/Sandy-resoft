@@ -38,6 +38,7 @@ Coded by www.creative-tim.com
 // Material Dashboard 2 PRO React layouts
 import Campaigns from "layouts/dashboards/campaigns";
 import SalesByCountry from "layouts/dashboards/campaigns/components/SalesByCountry";
+import SubscriberLists from "layouts/dashboards/campaigns/subscribes"
 import Sales from "layouts/dashboards/sales";
 import ProfileOverview from "layouts/pages/profile/profile-overview";
 import AllProjects from "layouts/pages/profile/all-projects";
@@ -123,26 +124,19 @@ const routes = [
     icon: <Icon fontSize="medium">add</Icon>,
     component: <Campaigns />,
     noCollapse: true,
-  },
-  { type: "title", title: "Templates", key: "title-pages" },
+  } ,
   {
     type: "collapse",
-    name: "All templates",
-    key: "all-templates",
-    noArrow: true,
-    route: "/applications/data-tables",
-    icon: <Icon fontSize="medium">mail</Icon>,
-    component: <DataTables />,
+    name: "Subscribers-list",
+    key: "new-campaign",
+    noArrow : true,
+    route: "/dashboards/subscribers-list",
+    icon: <Icon fontSize="medium">edit</Icon>,
+    component: <SubscriberLists />,
     noCollapse: true,
-  }, ]
-  // {
-  //   type: "collapse",
-  //   name: "New campaigns",
-  //   key: "campaigns",
-  //   noArrow : true,
-  //   icon: <Icon fontSize="medium">edit</Icon>,
-  //   noCollapse: true,
-  // },
+  },
+]
+
   // {
   //   type: "collapse",
   //   name: "Campaigns",
