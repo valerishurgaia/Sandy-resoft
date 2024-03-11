@@ -66,6 +66,7 @@ import SignInCover from "layouts/authentication/sign-in/cover";
 import SignInIllustration from "layouts/authentication/sign-in/illustration";
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
+import MailRoundedIcon from '@mui/icons-material/MailRounded';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -135,6 +136,7 @@ const routes = [
     noCollapse: true,
   },
 ]
+
   // {
   //   type: "collapse",
   //   name: "Campaigns",

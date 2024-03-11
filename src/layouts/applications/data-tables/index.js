@@ -24,40 +24,53 @@ import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import DataTable from "examples/Tables/DataTable";
-
-// Data
-import dataTableData from "layouts/applications/data-tables/data/dataTableData";
+import Tooltip from "@mui/material/Tooltip";
+import Icon from "@mui/material/Icon";
+import MDButton from "components/MDButton";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import CustomTable from "layouts/applications/data-tables/all-template-table";
+import TableButton from "layouts/applications/data-tables/pagination";
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function DataTables() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox pt={6} pb={3}>
-        <MDBox mb={3}>
-          <Card>
-            <MDBox p={3} lineHeight={1}>
-              <MDTypography variant="h5" fontWeight="medium">
-                Datatable Simple
-              </MDTypography>
-              <MDTypography variant="button" color="text">
-                A lightweight, extendable, dependency-free javascript HTML table plugin.
-              </MDTypography>
-            </MDBox>
-            <DataTable table={dataTableData} />
-          </Card>
+      <MDBox p={2}>
+        <MDBox display="flex" mb={2}>
+          <MDTypography variant="h4">ActRight</MDTypography>
+          <Tooltip title="Edit" placement="bottom">
+            <MDTypography variant="body1" sx={{ cursor: "pointer", mx: 1 }}>
+              <Icon color="inherit">edit</Icon>
+            </MDTypography>
+          </Tooltip>
         </MDBox>
-        <Card>
-          <MDBox p={3} lineHeight={1}>
-            <MDTypography variant="h5" fontWeight="medium">
-              Datatable Search
-            </MDTypography>
-            <MDTypography variant="button" color="text">
-              A lightweight, extendable, dependency-free javascript HTML table plugin.
-            </MDTypography>
-          </MDBox>
-          <DataTable table={dataTableData} canSearch />
-        </Card>
+        <MDButton
+          variant="contained"
+          size="large"
+          sx={{
+            display: "flex",
+            fontSize: "14px",
+            padding: "10px",
+            fontWeight: "400",
+            textTransform: "unset",
+            boxShadow: "4px 4px 4px 0px #0000004D",
+            color: "#364868",
+            gap: "8px",
+          }}
+        >
+          <Icon>
+            <AddCircleIcon />
+          </Icon>
+          Create a new template
+        </MDButton>
+        <MDBox my={4}>
+          <Card>
+              <CustomTable />
+              </Card>
+        </MDBox>
+        <TableButton text={1} />
+        <TableButton icon={faChevronRight} />
       </MDBox>
       <Footer />
     </DashboardLayout>
