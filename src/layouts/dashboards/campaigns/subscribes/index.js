@@ -109,9 +109,10 @@ const SubscriberLists = () => {
               background: '#4CAF50',
               display: 'inline-block',
               padding: '4px',
-              borderRadius: '30px',
+              borderRadius: '10px',
               color: 'white',
-              fontSize:"14px"
+              fontSize:"14px",
+              width:"30px"
             }}
           >
             {row.Active}
@@ -127,6 +128,7 @@ const SubscriberLists = () => {
               backgroundColor: row.Active > 0 ? '#364868' : 'transparent',
               color: row.Active > 0 ? 'white' : 'black',
               fontSize:"14px",
+              width:"30px"
             }}
           >
             {row.Segs}
@@ -139,7 +141,8 @@ const SubscriberLists = () => {
               display: 'inline-block',
               padding: '4px',
               borderRadius: '10px',
-              fontSize:"14px"
+              fontSize:"14px",
+              width:"30px"
             }}
           >
             {row.ARs}
@@ -153,7 +156,8 @@ const SubscriberLists = () => {
               display: 'inline-block',
               padding: '4px',
               borderRadius: '10px',
-              fontSize:"14px"
+              fontSize:"14px",
+              width:"30px"
             }}
           >
             {row.Unsubscribed}
@@ -192,7 +196,8 @@ const SubscriberLists = () => {
               display: 'inline-block',
               padding: '4px',
               borderRadius: '10px',
-              fontSize:"14px"
+              fontSize:"14px",
+              width:"30px"
             }}
           >
             {row.Bounced}

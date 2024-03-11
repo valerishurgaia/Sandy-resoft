@@ -181,7 +181,7 @@ function SalesByCountry() {
             style={{
               display: 'inline-block',
               padding: '4px',
-              fontSize:"14px"
+              fontSize:"14px",
             }}
           >
             {salesTableData.recipients}
@@ -205,7 +205,7 @@ function SalesByCountry() {
               padding: '4px',
               borderRadius: '10px',
               fontSize:"14px",
-              flexDirection:"column"
+              flexDirection:"column",
             }}
           >
              <span style={{ 
