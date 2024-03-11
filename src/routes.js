@@ -125,6 +125,18 @@ const routes = [
     component: <Campaigns />,
     noCollapse: true,
   } ,
+  { type: "title", title: "Templates", key: "title-pages" },
+  {
+    type: "collapse",
+    name: "All templates",
+    key: "all-templates",
+    noArrow: true,
+    route: "/applications/data-tables",
+    icon: <Icon fontSize="medium">mail</Icon>,
+    component: <DataTables />,
+    noCollapse: true,
+  },
+  { type: "title", title: "Lists & Subscribers", key: "title-pages" },
   {
     type: "collapse",
     name: "Subscribers-list",
