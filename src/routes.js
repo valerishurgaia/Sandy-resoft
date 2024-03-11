@@ -65,6 +65,7 @@ import SignInCover from "layouts/authentication/sign-in/cover";
 import SignInIllustration from "layouts/authentication/sign-in/illustration";
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
+import MailRoundedIcon from '@mui/icons-material/MailRounded';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -122,7 +123,18 @@ const routes = [
     icon: <Icon fontSize="medium">add</Icon>,
     component: <Campaigns />,
     noCollapse: true,
-  } ]
+  },
+  { type: "title", title: "Templates", key: "title-pages" },
+  {
+    type: "collapse",
+    name: "All templates",
+    key: "all-templates",
+    noArrow: true,
+    route: "/applications/data-tables",
+    icon: <Icon fontSize="medium">mail</Icon>,
+    component: <DataTables />,
+    noCollapse: true,
+  }, ]
   // {
   //   type: "collapse",
   //   name: "New campaigns",
