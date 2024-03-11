@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'; 
@@ -31,8 +31,8 @@ const styles = {
   td: {
     padding: '16px',
     textAlign: 'right',
-    fontSize: "10px",
-    color: "#ddd",
+    fontSize: "12px",
+    color: "#364868",
     borderBottom: '1px solid #F0F2F5',
   },
   tdFirst: {
@@ -49,11 +49,18 @@ const styles = {
   },
 };
 
-const data = [
-  { name: null, preview: null, use: null },
+const initialData = [
+  { id: 1, name: "dadu", preview: "dadu", use: "dadu" },
+  { id: 2, name: "dadu", preview: "dadu", use: "dadu" },
 ];
 
 function CustomTable() {
+  const [data, setData] = useState(initialData);
+
+  const handleDeleteRow = (id) => {
+    setData(data.filter(row => row.id !== id));
+  };
+
   return (
     <table style={styles.table}>
       <thead>
@@ -77,7 +84,7 @@ function CustomTable() {
       </button>
     </td>
     <td style={styles.td}>
-      <button style={styles.actionBtn}>
+      <button style={styles.actionBtn} onClick={() => handleDeleteRow(row.id)} >
         <FontAwesomeIcon icon={faTrashCan} style={{color: "#364868", marginRight: "10px"}}/> 
       </button>
     </td>
