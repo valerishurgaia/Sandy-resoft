@@ -30,6 +30,16 @@ function SalesByCountry() {
     setArrowRotation(arrowRotation + 180);
   };
 
+  const [rows, setRows] = useState(salesTableData);
+  
+  const handleDelete = (index) => {
+    console.log("shemodis")
+    const newRows = [...rows];
+    newRows.splice(index, 1);
+    setRows(newRows);
+
+};
+
   return (
     <>
       <DashboardLayout>
@@ -141,11 +151,11 @@ function SalesByCountry() {
       <th align="right">Unique Opens</th>
       <th align="right">Unique Clicks</th>
       <th align="right">Duplicate</th>
-      <th align="right">Delete</th>
+      <th align="right" style={{padding:"20px"}} >Delete</th>
     </tr>
   </thead>
   <tbody>
-    {salesTableData.map((salesTableData) => (
+    {rows.map((salesTableData, index) => (
       <tr key={salesTableData.ID} style={{ borderBottom: '1px solid #F0F2F5' }} >
         <td scope="row">
           <div
@@ -198,7 +208,16 @@ function SalesByCountry() {
               flexDirection:"column"
             }}
           >
-             <span style={{ backgroundColor:'#4CAF50', color:"white", width:"35%", borderRadius:"5px"}}>{salesTableData.uniqueOpen[0]}</span>  {salesTableData.uniqueOpen[1]}
+             <span style={{ 
+              backgroundColor:'#4CAF50',
+               color:"white",
+                width:"35%", 
+                borderRadius:"5px"
+                }}
+                >
+                  {salesTableData.uniqueOpen[0]}
+                  </span>  
+                  {salesTableData.uniqueOpen[1]}
           </div>
         </td>
         <td align="center">
@@ -208,10 +227,19 @@ function SalesByCountry() {
               padding: '4px',
               borderRadius: '10px',
               fontSize:"14px",
-              flexDirection:"column"
             }}
           >
-             <span style={{ backgroundColor:'#364868', color:"white", width:"35%", borderRadius:"5px"}}>{salesTableData.uniqueClicks[0]}</span> {salesTableData.uniqueClicks[1]}
+             <span 
+             style={{ 
+              backgroundColor: salesTableData.uniqueClicks[0] === '' ? 'transparent' : '#364868',
+               color:"white", 
+               width:"35%",
+                borderRadius:"5px"
+                }}
+                >
+                  {salesTableData.uniqueClicks[0]}
+                  </span>
+                   {salesTableData.uniqueClicks[1]}
           </div>
         </td>
         <td align="center">
@@ -229,7 +257,8 @@ function SalesByCountry() {
         </td>
         <td align="center">
   <div style={{ marginRight: "20px" }}>
-    {salesTableData.delete}
+      <button style={{backgroundColor:"white", border:"none", cursor:"pointer" }}  onClick={() => handleDelete(index)}> {salesTableData.delete} </button> 
+
   </div>
 </td>
       </tr>
@@ -241,9 +270,9 @@ function SalesByCountry() {
 
     <MDBox>
       <div style={{ display: "flex", flexDirection: "row", marginTop:"30px", marginBottom:"100px"}}>
-        <div style={{cursor:"pointer", backgroundColor: "#364868", color:"white", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}}>1</div>
-        <div style={{ cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >2</div>
-        <div style={{cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >{">"}</div>
+        <button style={{cursor:"pointer", backgroundColor: "#364868", color:"white", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}}>1</button>
+        <button style={{ cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >2</button>
+        <button style={{cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >{">"}</button>
       </div>
     </MDBox>
     </DashboardLayout>
@@ -253,9 +282,3 @@ function SalesByCountry() {
 }
 
 export default SalesByCountry;
-
-
-
-
-
-

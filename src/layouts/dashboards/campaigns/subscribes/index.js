@@ -1,14 +1,25 @@
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import rows from "layouts/dashboards/campaigns/subscribes/data/subscribersTableData";
+import rowsData from "layouts/dashboards/campaigns/subscribes/data/subscribersTableData";
 import plus from "assets/images/icons/plus-circle.svg";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import { useState } from "react";
 
 
 
-function SubscriberLists() {
+
+const SubscriberLists = () => {
+
+    const [rows, setRows] = useState(rowsData);
   
+    const handleDelete = (index) => {
+      const newRows = [...rows];
+      newRows.splice(index, 1);
+      setRows(newRows);
+  
+  };
+
   return (
     <>
       <DashboardLayout>
@@ -70,11 +81,11 @@ function SubscriberLists() {
       <th align="right">Bounced</th>
       <th align="right">Hide</th>
       <th align="right">Edit</th>
-      <th align="right">Delete</th>
+      <th align="right" style={{padding:"20px"}} >Delete</th>
     </tr>
   </thead>
   <tbody>
-    {rows.map((row) => (
+    {rows.map((row, index) =>(
       <tr key={row.ID} style={{ borderBottom: '1px solid #F0F2F5' }} >
         <td scope="row">
           <div
@@ -115,7 +126,7 @@ function SubscriberLists() {
               borderRadius: '10px',
               backgroundColor: row.Active > 0 ? '#364868' : 'transparent',
               color: row.Active > 0 ? 'white' : 'black',
-              fontSize:"14px"
+              fontSize:"14px",
             }}
           >
             {row.Segs}
@@ -134,6 +145,7 @@ function SubscriberLists() {
             {row.ARs}
           </div>
         </td>
+        
         <td align="center">
           <div
             style={{
@@ -147,6 +159,32 @@ function SubscriberLists() {
             {row.Unsubscribed}
           </div>
         </td>
+
+        {/* <td align="center">
+          <div
+            style={{
+              display: 'flex',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px",
+            }}
+          >
+             <span 
+             style={{ 
+              backgroundColor: 'transparent',
+              border: '1px solid #7B809A',
+              display: 'inline-block',
+              padding: '4px',
+              borderRadius: '10px',
+              fontSize:"14px"
+                }}
+                >
+                   {row.Unsubscribed[0]}
+                  </span>
+                  {row.Unsubscribed[1]}
+          </div>
+        </td> */}
+
         <td align="center">
           <div
             style={{
@@ -160,11 +198,11 @@ function SubscriberLists() {
             {row.Bounced}
           </div>
         </td>
-        <td align="right"> {row.Hide}</td>
-        <td align="right">{row.Edit}</td>
+        <td align="right" style={{cursor:"pointer"}}> {row.Hide}</td>
+        <td align="right"  style={{cursor:"pointer"}}>{row.Edit}</td>
         <td align="center">
-  <div style={{ marginRight: "20px" }}>
-    {row.Delete}
+  <div style={{ marginRight: "20px", cursor:"pointer"}}>
+   <button style={{backgroundColor:"white", border:"none", cursor:"pointer" }}  onClick={() => handleDelete(index)}> {row.Delete} </button> 
   </div>
   </td>
       </tr>
@@ -177,9 +215,9 @@ function SubscriberLists() {
 
     <MDBox>
       <div style={{ display: "flex", flexDirection: "row", marginTop:"30px", marginBottom:"100px"}}>
-        <div style={{cursor:"pointer", backgroundColor: "#364868", color:"white", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}}>1</div>
-        <div style={{ cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >2</div>
-        <div style={{cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >{">"}</div>
+        <button style={{cursor:"pointer", backgroundColor: "#364868", color:"white", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}}>1</button>
+        <button style={{ cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >2</button>
+        <button style={{cursor:"pointer", border: "1px solid grey", color:"grey", borderRadius: "50%", width: "40px", height: "40px", textAlign:"center", textJustify:"center",marginRight:"7px"}} >{">"}</button>
       </div>
     </MDBox>
     </DashboardLayout>
