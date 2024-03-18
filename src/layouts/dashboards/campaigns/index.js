@@ -33,11 +33,20 @@ import selectData from "layouts/pages/account/settings/components/BasicInfo/data
 import MDButton from "components/MDButton";
 import { styled } from "@mui/system";
 import { InputLabel } from "@mui/material";
-
+import MDInput from "components/MDInput/";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faItalic, faBold, faUnderline } from "@fortawesome/free-solid-svg-icons";
+import { RadioGroup, Radio, FormControlLabel, FormControl, FormLabel } from "@material-ui/core";
 
 const FormsField = styled(TextField)`
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 100%;
+`;
+
+const TranspFormField = styled(TextField)`
+  background-color: transparent;
+  width: 120px;
+  font-size: 18px;
 `;
 
 const FormsLabel = styled(InputLabel)`
@@ -46,14 +55,17 @@ const FormsLabel = styled(InputLabel)`
   font-size: 16px;
   margin-bottom: 10px;
   overflow: visible;
-`
+`;
+
+const FileInput = styled(TextField)`
+  border: none !important;
+`;
 
 function Campaigns() {
-
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox display="flex" pt={2} >
+      <MDBox display="flex" pt={2}>
         <MDTypography variant="h4" pl={3}>
           ActRight
         </MDTypography>
@@ -68,21 +80,19 @@ function Campaigns() {
           <Grid container flexDirection={"column"} gap="20px">
             <Grid item>
               <FormsLabel>Subject</FormsLabel>
-              <FormsField
-                variant="outlined"
-                placeholder="Subject of this email"
-              />
+              <FormsField variant="outlined" placeholder="Subject of this email" />
             </Grid>
             <Grid item>
               <FormsLabel>From name</FormsLabel>
-              <FormsField
-                variant="outlined"
-                placeholder="Brooklyn Alice" />
+              <FormsField variant="outlined" placeholder="Brooklyn Alice" />
             </Grid>
             <Grid item>
               <FormsLabel>From email</FormsLabel>
               <FormsField
-                variant="outlined" placeholder="Brooklynal@example.com" inputProps={{ type: "email" }} />
+                variant="outlined"
+                placeholder="Brooklynal@example.com"
+                inputProps={{ type: "email" }}
+              />
             </Grid>
             <Grid item>
               <FormsLabel>Reply to email</FormsLabel>
@@ -90,10 +100,7 @@ function Campaigns() {
             </Grid>
             <Grid item>
               <FormsLabel>Plain text version</FormsLabel>
-              <FormsField
-                multiline
-                rows={10}
-              />
+              <FormsField multiline rows={10} />
             </Grid>
             <Grid item>
               <FormsLabel>Query string</FormsLabel>
@@ -110,26 +117,77 @@ function Campaigns() {
                 )}
               />
             </Grid>
+            <Grid item>
+              <FormsLabel>Attachments</FormsLabel>
+              <FileInput
+                accept="image/*"
+                type="file"
+                sx={{
+                  border: "none",
+                }}
+              />
+            </Grid>
+            <Grid item>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Track opens:</FormLabel>
+                <RadioGroup row aria-label="track opens" name="trackOpens">
+                  <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                  <FormControlLabel value="no" control={<Radio />} label="No" />
+                  <FormControlLabel value="anonymously" control={<Radio />} label="Anonymously" />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+            <Grid item>
+            <FormControl component="fieldset">
+                <FormLabel component="legend">Track clicks:</FormLabel>
+                <RadioGroup row aria-label="track clicks" name="trackClicks">
+                  <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                  <FormControlLabel value="no" control={<Radio />} label="No" />
+                  <FormControlLabel value="anonymously" control={<Radio />} label="Anonymously" />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
           </Grid>
         </MDBox>
         <MDBox display="flex" flexDirection="column" flex="2">
-          <FormsLabel>HTML Code</FormsLabel>
-          <MDButton variant="contained" size="large" sx={{
-            width: "228px",
-            fontSize: "14px",
-            padding: "10px 3px",
-            fontWeight: "400",
-            textTransform: "unset",
-            boxShadow: "4px 4px 4px 0px #0000004D",
-            color: "#364868"
-          }} >Save and switch to HTML editor</MDButton>
-
+          <MDBox display="flex" alignItems="center" justifyContent="space-between">
+            <FormsLabel>HTML Code</FormsLabel>
+            <Autocomplete
+              defaultValue="Styles"
+              options={selectData.skills}
+              size="small"
+              renderInput={(params) => (
+                <TranspFormField {...params} InputLabelProps={{ shrink: true }} />
+              )}
+            />
+            <MDBox display="flex" alignItems="center" gap={4}>
+              <FontAwesomeIcon icon={faItalic} />
+              <FontAwesomeIcon icon={faBold} />
+              <FontAwesomeIcon icon={faUnderline} />
+            </MDBox>
+          </MDBox>
+          <MDButton
+            variant="contained"
+            size="large"
+            sx={{
+              width: "228px",
+              fontSize: "14px",
+              padding: "10px 3px",
+              fontWeight: "400",
+              textTransform: "unset",
+              boxShadow: "4px 4px 4px 0px #0000004D",
+              color: "#364868",
+              marginTop: "10px",
+            }}
+          >
+            Save and switch to HTML editor
+          </MDButton>
           <FormsField
             multiline
+            rows={24}
             sx={{
-              marginTop: "25px"
+              marginTop: "25px",
             }}
-            InputProps={{ style: { height: '580px' } }}
           />
         </MDBox>
       </MDBox>
