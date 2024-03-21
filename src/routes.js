@@ -38,7 +38,8 @@ Coded by www.creative-tim.com
 // Material Dashboard 2 PRO React layouts
 import Campaigns from "layouts/dashboards/campaigns";
 import SalesByCountry from "layouts/dashboards/campaigns/components/SalesByCountry";
-import SubscriberLists from "layouts/dashboards/campaigns/subscribes"
+import SubscriberLists from "layouts/dashboards/campaigns/subscribes";
+import BlackList from "../src/examples/BlackList/index"
 import Sales from "layouts/dashboards/sales";
 import ProfileOverview from "layouts/pages/profile/profile-overview";
 import AllProjects from "layouts/pages/profile/all-projects";
@@ -83,7 +84,7 @@ const routes = [
     name: "Brooklyn Alice",
     key: "brooklyn-alice",
     icon: <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />,
-    collapse: [
+    collapse: [ 
       {
         name: "My Profile",
         key: "my-profile",
@@ -145,6 +146,16 @@ const routes = [
     route: "/dashboards/subscribers-list",
     icon: <Icon fontSize="medium">edit</Icon>,
     component: <SubscriberLists />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Black-List",
+    key: "Black-List",
+    noArrow : true,
+    route: "/dashboards/Black-List",
+    icon: <Icon fontSize="medium">edit</Icon>,
+    component: <BlackList/>,
     noCollapse: true,
   },
 ]
