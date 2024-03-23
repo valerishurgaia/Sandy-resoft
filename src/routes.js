@@ -67,6 +67,7 @@ import SignInIllustration from "layouts/authentication/sign-in/illustration";
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
+import Chart from '@mui/icons-material/Addchart'
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -76,6 +77,7 @@ import Icon from "@mui/material/Icon";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
+import Reports from "./layouts/reports";
 
 const routes = [
   {
@@ -147,6 +149,17 @@ const routes = [
     component: <SubscriberLists />,
     noCollapse: true,
   },
+  { type: "title", title: "Reports", key: "title-pages" },
+  {
+    type: "collapse",
+    name: "See Reports",
+    key: "see-reports",
+    noArrow : true,
+    route: "/layouts/reports",
+    icon: <Icon fontSize="medium">Chart</Icon>,
+    component: <Reports />,
+    noCollapse: true,
+  }
 ]
 
   // {
