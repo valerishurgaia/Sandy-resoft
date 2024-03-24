@@ -7,6 +7,7 @@ import Icon from "@mui/material/Icon";
 import Card from "@mui/material/Card";
 import ChartComponent from "./ChartComponent";
 import ActivityCard from "./ActivityCard";
+import LinkActivity from "./LinkActivity";
 
 function Reports() {
 return (
@@ -47,6 +48,7 @@ return (
     </MDBox>
    <ChartComponent />
     <ActivityCard/>
+    <LinkActivity/>
   </DashboardLayout>
 )
 }
