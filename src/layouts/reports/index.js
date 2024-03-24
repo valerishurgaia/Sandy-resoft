@@ -5,14 +5,7 @@ import MDTypography from "../../components/MDTypography";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
-import verticalBarChartData from "../pages/charts/data/verticalBarChartData";
-import HorizontalBarChart from "../../examples/Charts/BarCharts/HorizontalBarChart";
-import horizontalBarChartData from "../pages/charts/data/horizontalBarChartData";
-import PieChart from "../../examples/Charts/PieChart";
-import pieChartData from "../pages/charts/data/pieChartData";
 import ChartComponent from "./ChartComponent";
-import MDBadge from "../../components/MDBadge";
 import ActivityCard from "./ActivityCard";
 
 function Reports() {

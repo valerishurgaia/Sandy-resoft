@@ -12,18 +12,18 @@ return (
         <Card>
           <MDBox display="flex" flexDirection="column" px={3} py={2} gap={1}>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent="2.37%" size="sx" container/>
+              <MDBadge badgeContent="2.37%" size="sx" color="success"/>
               <MDTypography variant="caption"> Opened</MDTypography>
-              <MDBadge variant="contained" color="#f0f2f5" badgeContent="1437 unique / opened 2076 times" />
+              <MDBadge color="light" badgeContent="1437 unique / opened 2076 times" />
             </MDBox>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent=".76659" container />
+              <MDBadge badgeContent=".76659" color="secondary"/>
               <MDTypography variant="caption"> Not Opened </MDTypography>
             </MDBox>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent="0.0976%" container/>
+              <MDBadge badgeContent="0.0976%" color="light"/>
               <MDTypography variant="caption"> Clicked a link </MDTypography>
-              <MDBadge variant="contained" badgeContent="27 unique clicks" />
+              <MDBadge badgeContent="27 unique clicks" color="light" />
             </MDBox>
           </MDBox>
         </Card>
@@ -32,19 +32,19 @@ return (
         <Card>
           <MDBox display="flex" flexDirection="column" px={3} py={2} gap={1}>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent="0.0786%" size="sx" container sx={{ Color: '#EB001B'}} />
+              <MDBadge badgeContent="0.0786%" size="sx" color="error" />
               <MDTypography variant="caption"> Opened</MDTypography>
-              <MDBadge variant="contained" color="#f0f2f5" badgeContent="55 unsubscribed" />
+              <MDBadge color="light"  badgeContent="55 unsubscribed" />
             </MDBox>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent="0%" container />
+              <MDBadge badgeContent="0%" color="dark"  />
               <MDTypography variant="caption"> Bounced </MDTypography>
-              <MDBadge variant="contained" badgeContent="0 bounced" />
+              <MDBadge color="light" badgeContent="0 bounced" />
             </MDBox>
             <MDBox display={"flex"} alignItems={'center'} gap={1}>
-              <MDBadge badgeContent="0%" container/>
+              <MDBadge badgeContent="0%" color="dark"/>
               <MDTypography variant="caption"> Clicked a link </MDTypography>
-              <MDBadge variant="contained" badgeContent="0 marked as a spam" />
+              <MDBadge color="light" badgeContent="0 marked as a spam" />
             </MDBox>
           </MDBox>
         </Card>
