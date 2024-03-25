@@ -95,6 +95,9 @@ const styles = {
     width: "50px",
     textAlign:"center",
  },
+ header:{
+  color:"#7B809A",
+ }
 
 };
 
@@ -122,8 +125,7 @@ const handleCopyRow = (id) => {
     <thead>
   <tr>
     {headers.map(header => (
-      <th key={header.key} style={header.key === 'campaign' ? styles.thFirst : styles.th}
-        >
+ <th key={header.key} style={header.key === 'campaign' ? { ...styles.thFirst, ...styles.header } : { ...styles.th, ...styles.header }}        >
         {header.label}
       </th>
     ))}
