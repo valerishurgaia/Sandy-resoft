@@ -19,7 +19,7 @@ const horizontalBarChartData = {
     {
       label: "Activity",
       backgroundColors: ["info", "primary", "dark", "secondary", "primary"],
-      data: [0, 5000, 10000, 60, 20, 15],
+      data: [10, 37, 25, 20, 20, 15],
     },
   ],
 };
