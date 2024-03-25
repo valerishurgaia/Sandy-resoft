@@ -74,6 +74,7 @@ import MDAvatar from "components/MDAvatar";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
@@ -156,7 +157,7 @@ const routes = [
     key: "see-reports",
     noArrow : true,
     route: "/layouts/reports",
-    icon: <Icon fontSize="medium">Chart</Icon>,
+    icon: <BarChartIcon fontSize="medium" />,
     component: <Reports />,
     noCollapse: true,
   }

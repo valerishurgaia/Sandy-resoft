@@ -8,6 +8,11 @@ import Card from "@mui/material/Card";
 import ChartComponent from "./ChartComponent";
 import ActivityCard from "./ActivityCard";
 import LinkActivity from "./LinkActivity";
+import LastOpened from "./LastOpened";
+import LastUnsubscribed from "./LastUnsubscribed";
+import LastBounced from "./LastBounced";
+import LastMarkedSpam from "./LastMarkedSpam";
+import Footer from "examples/Footer";
 
 function Reports() {
 return (
@@ -46,9 +51,16 @@ return (
       </MDBox>
     </Card>
     </MDBox>
+    <MDBox mb={2}>
    <ChartComponent />
     <ActivityCard/>
     <LinkActivity/>
+    <LastOpened/>
+    <LastUnsubscribed/>
+    <LastBounced />
+    <LastMarkedSpam />
+    </MDBox>
+    <Footer />
   </DashboardLayout>
 )
 }

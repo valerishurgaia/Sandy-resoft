@@ -13,9 +13,9 @@ import channelChartData from "../dashboards/sales/components/ChannelsChart/data"
 
 function ChartComponent() {
   return (
-    <MDBox>
+    <MDBox mt={3}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={6} lg={4}>
           <Card>
           <MDBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
             <MDTypography variant="h6">Top 10 Countries</MDTypography>
@@ -61,8 +61,8 @@ function ChartComponent() {
               </Tooltip>
             </MDBox>
             <Grid container direction="column">
-              <Grid item xs={7}>
-                <HorizontalBarChart chart={HorizontalBarChart} height="17.5rem"  />
+              <Grid item xs={12} lg={8}>
+                <HorizontalBarChart chart={horizontalBarChartData} height="17.5rem"  />
               </Grid>
               <Grid item xs={5}>
                 <MDBox display="flex" px={2} py={1} >
