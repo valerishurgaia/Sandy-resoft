@@ -14,9 +14,9 @@ Coded by www.creative-tim.com
 */
 
 const pieChartData = {
-  labels: ["Facebook", "Direct", "Organic", "Referral"],
+  labels: ["France", "United Kingdom", "Brazil", "Mexico"],
   datasets: {
-    label: "Projects",
+    label: "Countries",
     backgroundColors: ["info", "primary", "dark", "secondary", "primary"],
     data: [15, 20, 12, 60],
   },

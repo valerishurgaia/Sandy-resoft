@@ -26,14 +26,9 @@ import MDTypography from "components/MDTypography";
 function RefundsCell({ value, icon }) {
   return (
     <MDBox display="flex" justifyContent="center" alignItems="center" px={2}>
-      <MDTypography variant="button" fontWeight="regular" color="text">
-        {value}
-      </MDTypography>
-      <MDBox color={icon.color} lineHeight={0}>
         <Icon sx={{ fontWeight: "bold" }} fontSize="small">
           {icon.name}
         </Icon>
-      </MDBox>
     </MDBox>
   );
 }

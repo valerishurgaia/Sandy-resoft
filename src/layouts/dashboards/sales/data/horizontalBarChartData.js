@@ -18,7 +18,7 @@ const horizontalBarChartData = {
   datasets: [
     {
       label: "Sales by age",
-      color: "dark",
+      color: "light",
       data: [15, 20, 12, 60, 20, 15],
     },
   ],
