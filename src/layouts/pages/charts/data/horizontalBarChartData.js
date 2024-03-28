@@ -24,8 +24,8 @@ const horizontalBarChartData = {
         { label: "21-25", color: "primary" },
         { label: "26-30", color: "dark" },
         { label: "31-36", color: "secondary" },
-        { label: "36-42", color: "primary" },
-        { label: "42+", color: "info" }
+        { label: "36-42", color: "warning" },
+        { label: "42+", color: "success" }
       ]
     },
   ],
