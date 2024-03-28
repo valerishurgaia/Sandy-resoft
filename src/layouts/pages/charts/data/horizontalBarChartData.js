@@ -18,8 +18,15 @@ const horizontalBarChartData = {
   datasets: [
     {
       label: "Activity",
-      backgroundColors: ["info", "primary", "dark", "secondary", "primary"],
       data: [10, 37, 25, 20, 20, 15],
+      colors: [
+        { label: "16-20", color: "info" },
+        { label: "21-25", color: "primary" },
+        { label: "26-30", color: "dark" },
+        { label: "31-36", color: "secondary" },
+        { label: "36-42", color: "primary" },
+        { label: "42+", color: "info" }
+      ]
     },
   ],
 };

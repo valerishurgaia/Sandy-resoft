@@ -10,6 +10,8 @@ import Icon from "@mui/material/Icon";
 import MDBadgeDot from "../../components/MDBadgeDot";
 import Card from "@mui/material/Card";
 import channelChartData from "../dashboards/sales/components/ChannelsChart/data";
+import salesTableData from "layouts/dashboards/sales/data/salesTableData";
+import SalesTable from "examples/Tables/SalesTable"; 
 
 function ChartComponent() {
   return (
@@ -60,7 +62,11 @@ function ChartComponent() {
                 </MDButton>
               </Tooltip>
             </MDBox>
-            <Grid container direction="column">
+            <Grid>
+              <HorizontalBarChart chart={horizontalBarChartData} />
+          </Grid>
+  
+            {/* <Grid container direction="column">
               <Grid item xs={12} lg={8}>
                 <HorizontalBarChart chart={horizontalBarChartData} height="17.5rem"  />
               </Grid>
@@ -89,7 +95,7 @@ function ChartComponent() {
                   </MDBox>
                 </MDBox>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Card>
         </Grid>
       </Grid>

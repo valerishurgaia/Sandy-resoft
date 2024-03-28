@@ -53,15 +53,14 @@ function HorizontalBarChart({ icon, title, description, height, chart }) {
         weight: 5,
         borderWidth: 0,
         borderRadius: 4,
-        backgroundColor: colors[dataset.color]
-          ? colors[dataset.color || "dark"].main
-          : colors.dark.main,
+        backgroundColor: dataset.colors.map(colorObj => colors[colorObj.color].main || colors.dark.main),
         fill: false,
         maxBarThickness: 35,
       }))
     : [];
 
   const { data, options } = configs(chart.labels || [], chartDatasets);
+
 
   const renderChart = (
     <MDBox py={2} pr={2} pl={icon.component ? 1 : 2}>
